@@ -10,7 +10,6 @@ A Flutter-based weather application that provides real-time weather updates for 
 - [Configuration](#configuration)
 - [Project Structure](#project-structure)
 - [Dependencies](#dependencies)
-- [License](#license)
 
 ## Features
 
