@@ -36,7 +36,7 @@ Watch the app in action:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/YourUsername/weather-app.git
+   git clone https://github.com/NadaAlaa1/weather-app.git
    cd weather-app
 
 2. **Install dependencies** Ensure Flutter is installed on your system. Then, run the following command:
