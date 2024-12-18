@@ -22,15 +22,15 @@ A Flutter-based weather application that provides real-time weather updates for 
 Here’s a preview of the Weather App in action:
 
 <p align="center">
-  <img src="assets/screenshots/home.jpeg" alt="Home Screen" width="300">
-  <img src="assets/screenshots/search.jpeg" alt="Search Screen" width="300">
-  <img src="assets/screenshots/weather.jpeg" alt="Weather Info" width="300">
+  <img src="weather_app_with_provider/assets/screenshots/home.jpeg" alt="Home Screen" width="300">
+  <img src="weather_app_with_provider/assets/screenshots/search.jpeg" alt="Search Screen" width="300">
+  <img src="weather_app_with_provider/assets/screenshots/weather.jpeg" alt="Weather Info" width="300">
 </p>
 
 ### Video/GIF Demo
 Watch the app in action:
 
-![Weather App Demo](assets/screenshots/demo.gif)
+![Weather App Demo](weather_app_with_provider/assets/screenshots/demo.gif)
 
 ## Setup
 
