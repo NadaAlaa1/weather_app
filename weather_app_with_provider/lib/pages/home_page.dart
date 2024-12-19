@@ -84,7 +84,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   Text(
-                    'Last updated at: ${weatherData!.date.hour.toString()}:${weatherData!.date.minute.toString()}',
+                    'updated at: ${weatherData!.date.hour.toString()}:${weatherData!.date.minute.toString()}',
                     style: const TextStyle(
                       fontSize: 22,
                     ),
