@@ -1,24 +1,27 @@
+import 'dart:convert';
 import 'dart:developer';
-import 'package:dio/dio.dart';
+import 'package:http/http.dart' as http;
 import 'package:weather_app_with_cubit/models/weather_model.dart';
 
 class WeatherService {
-  final Dio dio;
-  final String baseUrl = 'https://api.weatherapi.com/v1';
-  final String apiKey =
-      '033582d57b4f4d48b99173832241711'; // replace with your api key
+  String baseUrl = 'http://api.weatherapi.com/v1';
 
-  WeatherService(this.dio);
-  Future<WeatherModel> getCurrentWeather({required String cityName}) async {
+  String apiKey = '033582d57b4f4d48b99173832241711';
+  Future<WeatherModel> getWeather({required String cityName}) async {
     try {
-      Response response = await dio
-          .get('$baseUrl/forecast.json?key=$apiKey&q=$cityName&days=1');
+      Uri url =
+          Uri.parse('$baseUrl/forecast.json?key=$apiKey&q=$cityName&days=1');
+      http.Response response = await http.get(url);
 
-      WeatherModel weatherModel = WeatherModel.fromJson(response.data);
-      return weatherModel;
-    } on DioException catch (e) {
-      final String errorMessage = e.response?.data['error']['message'] ?? 'Oops there was an error, try later';
-      throw Exception(errorMessage);
+      if (response.statusCode == 400) {
+        var data = jsonDecode(response.body);
+        throw Exception(data['error']['message']);
+      }
+      Map<String, dynamic> data = jsonDecode(response.body);
+
+      WeatherModel weather = WeatherModel.fromJson(data);
+
+      return weather;
     } catch (e) {
       log(e.toString());
       throw Exception('Oops there was an error, try later');
