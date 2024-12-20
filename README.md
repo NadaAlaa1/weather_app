@@ -1,22 +1,31 @@
-# Weather App
+# Weather App 🌤️
 
-A Flutter-based weather application that provides real-time weather updates for cities worldwide using the [WeatherAPI](https://www.weatherapi.com/). Users can search for a city to view the current weather, including temperature, conditions, and other details, presented with a dynamic interface.
+A Flutter-based application that delivers real-time weather updates for cities worldwide. This app features dynamic theming, detailed weather information, and robust error handling, powered by the [WeatherAPI](https://www.weatherapi.com/).
 
 ## Table of Contents
 
 - [Features](#features)
+- [Repository Structure](#repository-structure)
+- [Configuration](#configuration)
 - [Demo](#demo)
 - [Setup](#setup)
-- [Configuration](#configuration)
-- [Project Structure](#project-structure)
-- [Dependencies](#dependencies)
 
 ## Features
 
-- **Search City Weather**: Enter a city name to fetch and display real-time weather updates.
-- **Dynamic Theming**: The app theme adapts based on the weather conditions (e.g., sunny, cloudy, rainy).
-- **Detailed Weather Info**: Displays city name, temperature, weather condition, high/low temperatures, and an icon representing the condition.
-- **Error Handling**: Informs the user if an error occurs (e.g., invalid city name or network issue).
+- **Search Cities**: Fetch real-time weather updates for any city.
+- **Dynamic Theming**: Adaptive UI based on weather conditions.
+- **Detailed Info**: Includes temperature, conditions, and high/low values.
+- **Error Handling**: Informs users of invalid inputs or network issues.
+
+## Repository Structure
+
+- `weather_app_with_provider/`: Weather app implemented using the Provider package.
+- `weather_app_with_cubit/`: Weather app implemented using Cubit (from Flutter Bloc).
+
+## Configuration
+
+- **API**: This app uses [WeatherAPI](https://www.weatherapi.com/) to fetch weather data.
+- **Themes**: The app uses dynamic theming to enhance user experience based on weather conditions.
 
 ## Demo
 Here’s a preview of the Weather App in action:
@@ -53,37 +62,7 @@ Watch the app in action:
    ```dart
    final String apiKey = 'YOUR_API_KEY_HERE';
 
-5. **Platform-Specific Configuration**
-   - **Android**: Add internet permission in `android/app/src/main/AndroidManifest.xml`:
-
-     ```xml
-     <uses-permission android:name="android.permission.INTERNET"/>
-
-6. **Run the App**
+5. **Run the App**
    ```bash
    flutter run
 
-## Configuration
-
-- **API**: This app uses [WeatherAPI](https://www.weatherapi.com/) to fetch weather data.
-- **Themes**: The app uses dynamic theming to enhance user experience based on weather conditions.
-
-## Project Structure
-
-Here’s a brief overview of the key folders and files in this project:
-- **lib/main.dart**: Entry point of the application.
-- **lib/cubits**: Contains state management logic using `flutter_bloc` for handling weather data.
-- **lib/models**: Defines the `WeatherModel` class for parsing weather data.
-- **lib/services**: Handles API requests with the `WeatherService` class using `Dio`.
-- **lib/views**: Contains UI screens such as `HomeView` and `SearchView`.
-- **lib/widgets**: Holds reusable UI components like `WeatherInfoBody` and `NoWeatherBody`.
-
-## Dependencies
-
-- **flutter_bloc**: For state management and UI interaction.
-- **dio**: A powerful HTTP client for Dart, used for making API requests.
-- **flutter**: The main framework for building the application.
-
-Install these dependencies by running:
-```bash
-flutter pub get
