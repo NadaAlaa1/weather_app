@@ -4,7 +4,7 @@ import 'package:weather_app_with_cubit/models/weather_model.dart';
 import 'package:weather_app_with_cubit/services/weather_service.dart';
 
 class WeatherCubit extends Cubit<WeatherState> {
-  WeatherCubit(this.weatherService) : super(WeatherLoading());
+  WeatherCubit(this.weatherService) : super(WeatherInitial());
   WeatherService weatherService;
   WeatherModel? weatherModel;
 
